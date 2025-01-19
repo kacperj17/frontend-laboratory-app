@@ -20,14 +20,10 @@ export default function SigninPage() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // Debugowanie danych formularza
+
     const email = e.target.elements.email?.value;
     const password = e.target.elements.password?.value;
 
-    console.log("Email:", email); // Debugowanie
-    console.log("Password:", password); // Debugowanie
-
-    // Jeśli któryś z parametrów jest undefined, zwróć błąd
     if (!email || !password) {
       console.error("Email or Password is missing!");
       return;
@@ -37,8 +33,13 @@ export default function SigninPage() {
       .then(() => {
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
-            console.log("User logged in:", userCredential.user);
-            router.push(returnUrl || "/");
+            const user = userCredential.user;
+
+            if (!user.emailVerified) {
+                router.push("/user/verify");
+            } else {
+              router.push(returnUrl || "/");
+            }
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -53,9 +54,8 @@ export default function SigninPage() {
   };
 
   const handleCloseAlert = () => {
-    setErrorMessage(null); // Funkcja zamykająca alert
+    setErrorMessage(null);
   };
-
 
   return (
     <div className="hero bg-base-200" style={{ height: "80vh" }}>
@@ -103,24 +103,28 @@ export default function SigninPage() {
         </div>
       </div>
       {errorMessage && (
-            <div role="alert" className="alert alert-error mt-4 max-w-lg" style={{zIndex: 2}}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 shrink-0 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-                onClick={handleCloseAlert}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span>{errorMessage}</span>
-            </div>
-          )}
+        <div
+          role="alert"
+          className="alert alert-error mt-4 max-w-lg"
+          style={{ zIndex: 2 }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24"
+            onClick={handleCloseAlert}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>{errorMessage}</span>
+        </div>
+      )}
     </div>
   );
 }
