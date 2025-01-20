@@ -38,7 +38,7 @@ export default function SigninPage() {
             if (!user.emailVerified) {
                 router.push("/user/verify");
             } else {
-              router.push(returnUrl || "/");
+              router.push(returnUrl || "/user/myalbums");
             }
           })
           .catch((error) => {

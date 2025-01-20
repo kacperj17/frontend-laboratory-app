@@ -1,4 +1,4 @@
-import { useAuth } from "../lib/AuthContext";
+import { useAuth } from "@/app/lib/AuthContext";
 import Link from "next/link";
 
 import { LuLogIn } from "react-icons/lu";
@@ -6,6 +6,7 @@ import { LuLogOut } from "react-icons/lu";
 import { IoCreateOutline } from "react-icons/io5";
 import { IoHomeOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
+import { MdQueueMusic } from "react-icons/md";
 
 export default function Links() {
   const { user } = useAuth();
@@ -19,8 +20,23 @@ export default function Links() {
             <IoHomeOutline /> Strona główna
           </Link>
         </li>
+        <li>
+          <Link href="/albums">
+            <MdQueueMusic /> Albumy
+          </Link>
+        </li>
         {user ? (
           <>
+            <li>
+              <Link href="/user/myalbums">
+                <MdQueueMusic /> Moje albumy
+              </Link>
+            </li>
+            <li>
+              <Link href="/user/addalbum">
+                <MdQueueMusic /> Dodaj nowy album
+              </Link>
+            </li>
             <li>
               <Link href="/user/profile">
                 <CgProfile /> Profil

@@ -16,3 +16,41 @@ body {
   z-index: 10; /* Ensure it stays above other content */
 }
 
+.album-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrowanie zawartości */
+  justify-content: center; /* Centrowanie w pionie */
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  border-color: #73a07d;
+  background-color: #73a07d;
+  color: white;
+}
+
+.btn-primary:hover {
+  border-color: #98c7a2;
+  background-color: #98c7a2;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.mt-4 {
+  margin-top: 20px; /* Odstęp między przyciskami */
+}
