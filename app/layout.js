@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AuthProvider } from "./lib/AuthContext";
 import "./globals.css";
 import Links from "./components/links";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +27,9 @@ export default function RootLayout({ children }) {
             {/* Navbar */}
             <div className="navbar bg-base-200 px-10 py-4 w-full">
               <div className="flex items-center justify-between w-full">
-                <a className="btn btn-ghost text-xl">
+                <Link href="/" className="btn btn-ghost text-xl">
                   WSEI - Frameworki frontendowe
-                </a>
+                </Link>
                 <div className="flex-none">
                   <div className="drawer drawer-end">
                     <input
