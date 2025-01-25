@@ -16,21 +16,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Po zalogowaniu do aplikacji, będziesz miał możliwość dodawania albumów do swojej osobistej kolekcji przesłuchanych albumów. Dzięki temu możesz śledzić, które albumy już wysłuchałeś, tworzyć własną bibliotekę ulubionych utworów i mieć do nich łatwy dostęp w każdej chwili. Dodatkowo, jeśli chcesz, możesz dodawać nowe albumy do głównej kolekcji aplikacji. Wystarczy, że wypełnisz formularz, podając wszystkie niezbędne informacje, takie jak tytuł, wykonawca, gatunek, lista utworów i link do okładki. Nowe albumy trafią do wspólnej kolekcji i będą dostępne dla wszystkich użytkowników aplikacji. To świetna okazja, by dzielić się swoją muzyką i odkrywać nowe albumy od innych użytkowników.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Link
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://frontend-laboratory-app.vercel.app/
